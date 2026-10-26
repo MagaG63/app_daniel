@@ -1,7 +1,20 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import "./Search.css";
 
-export default function Search() {
+export default function Search({ searchFunc }) {
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    searchFunc(value);
+  }, [value]);
+
   return (
-    <div>Search</div>
-  )
+    <input
+      className="search"
+      type="text"
+      placeholder="Поиск приложений"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+  );
 }

@@ -1,0 +1,65 @@
+.tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  background: var(--win-panel);
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.1s;
+}
+
+.tile:hover {
+  background: #333333;
+  border-color: var(--win-border);
+}
+
+.tile:active {
+  background: var(--win-blue);
+  border-color: var(--win-blue);
+  transform: scale(0.98);
+}
+
+/* ===== Единый размер иконки ===== */
+.tile__icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f1f1f;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.tile__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* ❗ не обрезаем, не искажаем пропорции */
+  display: block;
+}
+
+.tile__name {
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+  color: var(--win-text);
+}

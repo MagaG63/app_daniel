@@ -1,0 +1,27 @@
+.search {
+  width: 280px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--win-text);
+  background: #1f1f1f;
+  border: 1px solid var(--win-border);
+  border-radius: 0; /* ❗ острые углы — фирменная черта Metro */
+  outline: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.search::placeholder {
+  color: #7a7a7a;
+}
+
+.search:hover {
+  border-color: #5a5a5a;
+}
+
+.search:focus {
+  border-color: var(--win-blue);
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.35);
+}
